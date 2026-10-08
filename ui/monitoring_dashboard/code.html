@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NER Landslide Early Warning System - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "on-secondary": "#472a00",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#32353c",
+                        "on-tertiary-container": "#79000e",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#363940",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#bbcabf",
+                        "surface-container-highest": "#32353c",
+                        "primary-fixed": "#6ffbbe",
+                        "background": "#10131a",
+                        "surface-container-low": "#191c22",
+                        "tertiary-fixed": "#ffdad7",
+                        "inverse-surface": "#e1e2eb",
+                        "primary-fixed-dim": "#4edea3",
+                        "secondary-container": "#ee9800",
+                        "secondary": "#ffb95f",
+                        "surface-container": "#1d2026",
+                        "on-tertiary-fixed": "#410004",
+                        "on-tertiary": "#68000a",
+                        "outline": "#86948a",
+                        "tertiary": "#ffb3ad",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "surface-container-high": "#272a31",
+                        "on-background": "#e1e2eb",
+                        "primary": "#4edea3",
+                        "outline-variant": "#3c4a42",
+                        "tertiary-container": "#ff7a73",
+                        "on-primary": "#003824",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface": "#10131a",
+                        "inverse-on-surface": "#2e3037",
+                        "on-secondary-container": "#5b3800",
+                        "on-primary-container": "#00422b",
+                        "on-primary-fixed": "#002113",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-surface": "#e1e2eb",
+                        "inverse-primary": "#006c49",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-tint": "#4edea3",
+                        "surface-dim": "#10131a",
+                        "primary-container": "#10b981",
+                        "secondary-fixed": "#ffddb8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "mono-data": ["Courier Prime"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .map-overlay {
+            background: linear-gradient(to bottom, rgba(16,19,26,0) 0%, rgba(16,19,26,1) 100%);
+        }
+        .widget-glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center w-full px-lg h-16 fixed top-0 z-50 bg-background dark:bg-background border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">landscape</span>
+<span class="text-title-lg font-title-lg font-bold text-primary dark:text-primary tracking-tight">NER Landslide Early Warning System</span>
+<div class="ml-xl flex items-center bg-surface-container-high rounded-full px-4 py-1.5 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">location_on</span>
+<span class="text-label-md font-label-md text-on-surface">Kohima District</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm ml-2">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant/10 transition-colors rounded-full relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full animate-pulse"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant/10 transition-colors rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="A highly professional headshot of a system administrator in a high-tech command center environment. The lighting is dramatic, cool-toned, reflecting a dark mode aesthetic with subtle green and blue ambient glows. The subject looks focused, representing precision and authority in a 24/7 monitoring context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHBDFYJHSLUo9YIpuzPrTT0kO9u1lXvHLuZKMjoVBVjrEeG3z2doF0VGm5HiVby6wQyPPPaCM8DeoNGXhgClygy3ywT7oS5r_c0xJCYdpUBysHNzQ5nViiYy5FkTJPmxr2IjUkwc4b-LYqnfNqun6fBirt4d69m_JPhpzylfg69v8B9Ng2kjcEwO5snqFVNgvW2AhRkHc6h2449uyhhARAnhwdeg4D_TDD3ezFBMPhCGiJshwfSqxC1g"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-[280px] bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant flex flex-col py-md px-sm z-40 hidden md:flex">
+<div class="mb-lg px-md">
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-2">Control Center</div>
+<div class="text-title-lg font-title-lg text-primary font-bold">Active Monitoring</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-lg font-bold px-4 py-3 active:scale-95 duration-100 shadow-[0_0_10px_rgba(238,152,0,0.2)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg px-4 py-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">info</span>
+<span class="text-label-md font-label-md">Detail</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg px-4 py-3 relative" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">warning</span>
+<span class="text-label-md font-label-md">Alerts</span>
+<span class="ml-auto bg-error text-on-error text-[10px] font-bold px-2 py-0.5 rounded-full">3</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg px-4 py-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+<span class="text-label-md font-label-md">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-lg border-t border-outline-variant space-y-2">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-fixed-dim transition-colors mb-4">
+<span class="material-symbols-outlined text-sm">summarize</span> Generate Report
+            </button>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg px-4 py-2" href="#">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg px-4 py-2" href="#">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">help</span>
+<span class="text-label-md font-label-md">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-[280px] mt-16 p-margin h-[calc(100vh-64px)] flex flex-col md:flex-row gap-lg overflow-hidden">
+<!-- Left Panel: GIS Map Area -->
+<div class="flex-1 relative rounded-xl overflow-hidden border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex flex-col bg-surface-container-lowest">
+<!-- Map Placeholder / Background -->
+<div class="absolute inset-0 bg-surface-container-highest opacity-50 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface-variant to-background"></div>
+<div class="absolute inset-0 w-full h-full bg-cover bg-center mix-blend-screen opacity-80" data-alt="A highly detailed, dark-mode topographical GIS map visualization of a mountainous region. The aesthetic is high-tech command center, featuring deep blacks and dark grays for the terrain. Distinct semi-transparent geometric polygons highlight risk zones in vibrant emergency red, warning amber, and safe green. Subtle glowing pin markers indicate village locations. Grid lines are faint and precise, emphasizing a data-driven, authoritative atmosphere." data-location="Kohima" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWK9dlm52rf1854JTEju1cDWTFlGfnI9FiE8JHuLVjed40sATCj2C-y8nrzsfM_TiUpt_mLx1oZm9UY1CzljIpTazC2ybgeivaBIIuHptcNgcL0WJv0BiDSBi4EO6QFdmzXcLEdukimUsXX1dmGrlqmrTfIlFMjAnd4yJKmWFmSQs3fl5aZWgEXFhBOPai1Us_2rboiv3qX7A-io-ly55THiBCVSB2Ls0TnxDib0KdWDRIKF4NVubu6w')"></div>
+<!-- Map Controls Overlay -->
+<div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+<div class="bg-surface/90 backdrop-blur-sm border border-outline-variant p-2 rounded-lg flex flex-col gap-2">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-sm">add</span></button>
+<div class="w-full h-px bg-outline-variant"></div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-variant rounded"><span class="material-symbols-outlined text-sm">remove</span></button>
+</div>
+<button class="bg-surface/90 backdrop-blur-sm border border-outline-variant w-12 h-12 flex items-center justify-center text-primary hover:bg-surface-variant rounded-lg mt-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</button>
+</div>
+<!-- Legend -->
+<div class="absolute bottom-4 left-4 z-10 bg-surface/90 backdrop-blur-md border border-outline-variant p-4 rounded-lg">
+<h4 class="text-label-md font-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Risk Zones</h4>
+<div class="space-y-2">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-error/50 border border-error"></div><span class="text-body-md text-on-surface">Critical (Red)</span></div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-secondary/50 border border-secondary"></div><span class="text-body-md text-on-surface">Warning (Amber)</span></div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-primary/50 border border-primary"></div><span class="text-body-md text-on-surface">Stable (Green)</span></div>
+</div>
+</div>
+<!-- Bottom Gradient for Map -->
+<div class="absolute bottom-0 w-full h-24 map-overlay z-0 pointer-events-none"></div>
+</div>
+<!-- Right Sidebar: Widgets -->
+<div class="w-full md:w-[400px] flex flex-col gap-lg overflow-y-auto pr-2 pb-24 md:pb-0 custom-scrollbar">
+<!-- Risk Overview Card -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+<div class="absolute inset-0 bg-error/5 group-hover:bg-error/10 transition-colors pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<h2 class="text-title-lg font-title-lg text-on-surface font-bold">Risk Overview</h2>
+<span class="material-symbols-outlined text-on-surface-variant">info</span>
+</div>
+<div class="flex items-center justify-center py-6 relative z-10">
+<div class="bg-error/20 border-2 border-error text-error px-6 py-3 rounded-lg flex items-center gap-3 animate-pulse">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="text-headline-lg font-headline-lg tracking-widest uppercase">High Risk</span>
+</div>
+</div>
+<div class="text-center text-body-md font-body-md text-error-container mt-2">Evacuation recommended for Sector 4 (Kohima Village)</div>
+</div>
+<!-- Gauge Widgets Grid -->
+<div class="grid grid-cols-2 gap-sm">
+<!-- Rainfall Widget -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex flex-col items-center justify-center shadow-sm hover:border-outline transition-colors widget-glow">
+<span class="material-symbols-outlined text-secondary mb-2">rainy</span>
+<div class="relative w-16 h-16 flex items-center justify-center mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-secondary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="80, 100" stroke-width="3"></path>
+</svg>
+<span class="absolute text-label-md font-mono-data text-on-surface">120</span>
+</div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Rainfall</span>
+<span class="text-[10px] text-on-surface-variant mt-1">mm/24h</span>
+</div>
+<!-- Soil Moisture Widget -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex flex-col items-center justify-center shadow-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-error mb-2">water_drop</span>
+<div class="relative w-16 h-16 flex items-center justify-center mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-error stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="85, 100" stroke-width="3"></path>
+</svg>
+<span class="absolute text-label-md font-mono-data text-on-surface">85%</span>
+</div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Moisture</span>
+</div>
+<!-- Vibration Widget -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex flex-col items-center justify-center shadow-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2">vibration</span>
+<div class="relative w-16 h-16 flex items-center justify-center mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-secondary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="60, 100" stroke-width="3"></path>
+</svg>
+<span class="absolute text-label-md font-mono-data text-on-surface">4.2</span>
+</div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Vibration</span>
+<span class="text-[10px] text-on-surface-variant mt-1">mm/s</span>
+</div>
+<!-- Temperature Widget -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 flex flex-col items-center justify-center shadow-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-primary mb-2">thermostat</span>
+<div class="relative w-16 h-16 flex items-center justify-center mb-2">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="45, 100" stroke-width="3"></path>
+</svg>
+<span class="absolute text-label-md font-mono-data text-on-surface">22°</span>
+</div>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Temp</span>
+<span class="text-[10px] text-on-surface-variant mt-1">Celsius</span>
+</div>
+</div>
+<!-- Recent Alerts List -->
+<div class="bg-surface-container border border-outline-variant rounded-xl flex-1 flex flex-col overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-high/50">
+<h3 class="text-body-lg font-body-lg text-on-surface font-semibold">Recent Alerts</h3>
+<button class="text-label-md text-primary hover:text-primary-fixed-dim transition-colors">View All</button>
+</div>
+<div class="overflow-y-auto flex-1 p-2 space-y-1">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors border-l-2 border-error">
+<span class="material-symbols-outlined text-error text-sm mt-0.5">warning</span>
+<div>
+<div class="text-body-md text-on-surface">High vibration detected in Village A</div>
+<div class="text-label-md font-mono-data text-on-surface-variant mt-1">10m ago • Sensor Node 04</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors border-l-2 border-secondary">
+<span class="material-symbols-outlined text-secondary text-sm mt-0.5">water_drop</span>
+<div>
+<div class="text-body-md text-on-surface">Soil moisture approaching threshold</div>
+<div class="text-label-md font-mono-data text-on-surface-variant mt-1">45m ago • Sector 7</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+<div>
+<div class="text-body-md text-on-surface">System recalibration successful</div>
+<div class="text-label-md font-mono-data text-on-surface-variant mt-1">2h ago • Main Gateway</div>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/40 transition-colors border-l-2 border-error">
+<span class="material-symbols-outlined text-error text-sm mt-0.5">warning</span>
+<div>
+<div class="text-body-md text-on-surface">Sustained rainfall warning issued</div>
+<div class="text-label-md font-mono-data text-on-surface-variant mt-1">3h ago • Regional</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe bg-surface-container dark:bg-surface-container border-t border-outline-variant shadow-[0px_-4px_20px_rgba(0,0,0,0.5)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-full px-4 py-1 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">map</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-full px-4 py-1 transition-colors relative" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">emergency</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-1">Alerts</span>
+<span class="absolute top-0 right-2 w-2 h-2 bg-error rounded-full"></span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-full px-4 py-1 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">campaign</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-1">Reports</span>
+</a>
+</nav>
+<style>
+        /* Custom Scrollbar for Widgets column */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: var(--tw-colors-surface-variant);
+            border-radius: 20px;
+        }
+        
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .pb-safe {
+                padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</body></html>

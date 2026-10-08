@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - NER Landslide Early Warning System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Courier+Prime:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#ffb95f",
+                        "tertiary-container": "#ff7a73",
+                        "on-tertiary": "#68000a",
+                        "inverse-primary": "#006c49",
+                        "on-tertiary-container": "#79000e",
+                        "error-container": "#93000a",
+                        "surface-dim": "#10131a",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container-high": "#272a31",
+                        "inverse-surface": "#e1e2eb",
+                        "on-primary-fixed": "#002113",
+                        "inverse-on-surface": "#2e3037",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-primary-container": "#00422b",
+                        "primary-fixed-dim": "#4edea3",
+                        "surface-bright": "#363940",
+                        "on-background": "#e1e2eb",
+                        "surface-container": "#1d2026",
+                        "on-primary": "#003824",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "primary-container": "#10b981",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e1e2eb",
+                        "surface-tint": "#4edea3",
+                        "secondary-container": "#ee9800",
+                        "primary": "#4edea3",
+                        "on-secondary": "#472a00",
+                        "primary-fixed": "#6ffbbe",
+                        "on-secondary-fixed": "#2a1700",
+                        "outline": "#86948a",
+                        "surface-container-highest": "#32353c",
+                        "outline-variant": "#3c4a42",
+                        "secondary-fixed": "#ffddb8",
+                        "tertiary-fixed": "#ffdad7",
+                        "background": "#10131a",
+                        "tertiary": "#ffb3ad",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#5b3800",
+                        "surface-variant": "#32353c",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#410004",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-surface-variant": "#bbcabf",
+                        "surface-container-low": "#191c22",
+                        "surface": "#10131a",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "mono-data": ["Courier Prime"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b0e14; /* surface-container-lowest */
+            color: #e1e2eb; /* on-background */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-background border-b border-outline-variant shadow-sm flex justify-between items-center w-full px-lg h-16 fixed top-0 z-50">
+<div class="flex items-center gap-md">
+<h1 class="text-title-lg font-title-lg font-bold text-primary">NER Landslide Early Warning System</h1>
+</div>
+<div class="flex items-center gap-md">
+<!-- Search Bar placeholder -->
+<div class="hidden md:flex bg-surface-container-high rounded-full px-4 py-1 border border-outline-variant items-center focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="bg-transparent border-none text-body-md text-on-surface focus:outline-none focus:ring-0 w-48 placeholder-on-surface-variant" placeholder="Search settings..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-variant/10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="text-primary font-bold border-b-2 border-primary transition-colors p-sm flex items-center h-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+<img class="w-8 h-8 rounded-full border border-outline object-cover ml-sm" data-alt="A small circular profile avatar for an administrator in a dark, high-tech command center interface. The portrait is dimly lit with cool green and blue ambient light reflecting off a serious, professional face. The style is modern, sharp, and highly detailed, fitting a secure system environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMS6-hWIWNVntED5grNxvT_q1Q-8c5kYAB1y1VOAM6b-VEUTBGJ7Cjtj-uTw2sz-3RRd4P3AcNqYrAk58UdeL7Q7kzDPfPMqVnxrPqbYMr7wXnayqeh5_0pdSrWVWria2cywPqKn5Jf7LBjqYtQEZr9ytH2p2-0CriFrNek4aFnFalc_dLDqMXHf2Tz0dMEhV6k-0oG7suK8LuVSnDi-vH83KBrj97vINUJc_S-7Yn0sI2LhbMQYCuHQ"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-[calc(100vh-64px)] w-[280px] fixed left-0 top-16 bg-surface-container-low border-r border-outline-variant py-md px-sm z-40">
+<div class="mb-lg px-md">
+<h2 class="text-title-lg font-title-lg text-on-surface">Control Center</h2>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mt-xs">Active Monitoring</p>
+</div>
+<div class="flex-1 space-y-sm">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">info</span>
+<span class="text-label-md font-label-md">Detail</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">warning</span>
+<span class="text-label-md font-label-md">Alerts</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+<span class="text-label-md font-label-md">Analytics</span>
+</a>
+</div>
+<div class="mt-auto pt-lg border-t border-outline-variant space-y-sm">
+<a class="flex items-center gap-md p-md bg-secondary-container text-on-secondary-container rounded-lg font-bold scale-95 duration-100 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+<span class="text-label-md font-label-md">Help</span>
+</a>
+<button class="w-full mt-md py-sm px-md bg-primary-container text-on-primary-container text-label-md font-label-md rounded-lg font-bold hover:bg-primary transition-colors">
+                Generate Report
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-[280px] pt-[88px] px-margin pb-32 md:pb-margin max-w-7xl mx-auto">
+<div class="mb-lg">
+<h2 class="text-headline-lg font-headline-lg text-on-surface">System Settings</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-sm">Manage configuration parameters and user access levels.</p>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-lg">
+<!-- Left Column: Navigation/Tabs (Desktop) -->
+<div class="hidden xl:block xl:col-span-3">
+<div class="bg-surface-container flex flex-col rounded-xl border border-outline-variant overflow-hidden sticky top-24">
+<button class="flex items-center gap-md p-md bg-surface-container-highest border-l-2 border-primary text-primary transition-colors text-left">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-md font-label-md font-bold">Profile Settings</span>
+</button>
+<button class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant/20 hover:text-on-surface transition-colors text-left border-l-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">memory</span>
+<span class="text-label-md font-label-md">System Configuration</span>
+</button>
+<button class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant/20 hover:text-on-surface transition-colors text-left border-l-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">campaign</span>
+<span class="text-label-md font-label-md">Notification Channels</span>
+</button>
+<button class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-variant/20 hover:text-on-surface transition-colors text-left border-l-2 border-transparent">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+<span class="text-label-md font-label-md">User Management</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Forms & Data -->
+<div class="xl:col-span-9 space-y-lg">
+<!-- Profile Settings Section -->
+<section class="bg-surface-container rounded-xl border border-outline-variant p-md lg:p-lg shadow-[0px_4px_20px_rgba(0,0,0,0.5)]">
+<h3 class="text-title-lg font-title-lg text-on-surface mb-md flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">person</span>
+                        Profile Settings
+                    </h3>
+<div class="flex flex-col md:flex-row gap-lg items-start">
+<!-- Avatar -->
+<div class="flex flex-col items-center gap-sm">
+<div class="relative group cursor-pointer">
+<img class="w-24 h-24 rounded-lg object-cover border border-outline-variant group-hover:border-primary transition-colors" data-alt="A larger, high-resolution square profile picture of a system administrator in a high-tech dark mode setting. The image is crisp, with dramatic side lighting emphasizing the professional, alert nature of the individual operating critical infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbFiE2efmwHppg8VR7aqcwOi2OKs1SaNDRf69fyx5kgVLjJddGes29z99cXLf3UBo82hJF1v8_W53P84X3xjkTdT1H0Uz6fah6_yfGNURkTN6ZdbkOyCbbpHAKxN3Jd7jB-f1Qlaj5ASzVuU5q66k7LfK1P0uhiNoucDK7qGKewIVx63tUhQaNbp6uW0zN17_g5rjuCcrns3csPSFyYSutj7_DXaBsPHA1BDyReL8vhrLjkMSutSEhzA"/>
+<div class="absolute inset-0 bg-black/50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">edit</span>
+</div>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Update Avatar</span>
+</div>
+<!-- Details Form -->
+<div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-md w-full">
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-md p-sm text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" type="text" value="Admin User"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Role</label>
+<input class="w-full bg-surface-container-high border border-outline-variant/50 rounded-md p-sm text-body-md text-on-surface-variant cursor-not-allowed" disabled="" type="text" value="System Administrator"/>
+</div>
+<div class="space-y-xs md:col-span-2">
+<label class="text-label-md font-label-md text-on-surface-variant">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-md p-sm text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" type="email" value="admin@ner-lews.gov"/>
+</div>
+<div class="md:col-span-2 flex justify-end mt-sm">
+<button class="px-md py-sm bg-primary-container text-on-primary-container rounded-md text-label-md font-label-md font-bold hover:bg-primary transition-colors">Save Changes</button>
+</div>
+</div>
+</div>
+</section>
+<!-- System Configuration Section -->
+<section class="bg-surface-container rounded-xl border border-outline-variant p-md lg:p-lg shadow-[0px_4px_20px_rgba(0,0,0,0.5)] opacity-50 pointer-events-none filter blur-[1px]">
+<h3 class="text-title-lg font-title-lg text-on-surface mb-md flex items-center gap-sm border-b border-outline-variant pb-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">memory</span>
+                        System Configuration
+                    </h3>
+<p class="text-body-sm text-on-surface-variant mb-md">Configure global thresholds and operational parameters.</p>
+<!-- Content minimized for preview -->
+<div class="h-24 bg-surface-container-lowest rounded border border-outline-variant border-dashed flex items-center justify-center text-on-surface-variant">
+                        Section content placeholder...
+                    </div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe bg-surface-container border-t border-outline-variant shadow-[0px_-4px_20px_rgba(0,0,0,0.5)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-[10px] font-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">map</span>
+<span class="text-[10px] font-label-md mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">emergency</span>
+<span class="text-[10px] font-label-md mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded-lg p-2 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">campaign</span>
+<span class="text-[10px] font-label-md mt-1">Reports</span>
+</a>
+</nav>
+</body></html>

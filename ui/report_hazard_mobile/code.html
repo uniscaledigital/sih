@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citizen Reporting Form</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Courier+Prime&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#690005",
+                      "on-secondary": "#472a00",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#32353c",
+                      "on-tertiary-container": "#79000e",
+                      "on-primary-fixed-variant": "#005236",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#363940",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "error-container": "#93000a",
+                      "on-surface-variant": "#bbcabf",
+                      "surface-container-highest": "#32353c",
+                      "primary-fixed": "#6ffbbe",
+                      "background": "#10131a",
+                      "surface-container-low": "#191c22",
+                      "tertiary-fixed": "#ffdad7",
+                      "inverse-surface": "#e1e2eb",
+                      "primary-fixed-dim": "#4edea3",
+                      "secondary-container": "#ee9800",
+                      "secondary": "#ffb95f",
+                      "surface-container": "#1d2026",
+                      "on-tertiary-fixed": "#410004",
+                      "on-tertiary": "#68000a",
+                      "outline": "#86948a",
+                      "tertiary": "#ffb3ad",
+                      "on-tertiary-fixed-variant": "#930013",
+                      "surface-container-high": "#272a31",
+                      "on-background": "#e1e2eb",
+                      "primary": "#4edea3",
+                      "outline-variant": "#3c4a42",
+                      "tertiary-container": "#ff7a73",
+                      "on-primary": "#003824",
+                      "tertiary-fixed-dim": "#ffb3ad",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "surface": "#10131a",
+                      "inverse-on-surface": "#2e3037",
+                      "on-secondary-container": "#5b3800",
+                      "on-primary-container": "#00422b",
+                      "on-primary-fixed": "#002113",
+                      "on-secondary-fixed": "#2a1700",
+                      "on-surface": "#e1e2eb",
+                      "inverse-primary": "#006c49",
+                      "surface-container-lowest": "#0b0e14",
+                      "surface-tint": "#4edea3",
+                      "surface-dim": "#10131a",
+                      "primary-container": "#10b981",
+                      "secondary-fixed": "#ffddb8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "margin": "24px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "mono-data": [
+                              "Courier Prime"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        /* Transition for success state */
+        .slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center bg-background md:p-lg">
+<!-- Mobile Container -->
+<div class="w-full max-w-md h-full min-h-screen md:min-h-[800px] md:h-auto md:rounded-xl bg-surface-container-low shadow-[0px_4px_20px_rgba(0,0,0,0.5)] overflow-hidden relative border md:border-outline-variant/30 flex flex-col">
+<!-- Header (Not part of global nav, just page header) -->
+<header class="flex items-center p-md bg-surface-container-high border-b border-outline-variant shrink-0">
+<button aria-label="Go back" class="text-on-surface-variant hover:text-on-surface transition-colors mr-md">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-title-lg font-title-lg flex-1">Report a Hazard</h1>
+<span class="material-symbols-outlined text-primary">warning</span>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-md flex flex-col gap-lg" id="form-container">
+<!-- Instructions -->
+<p class="text-body-md font-body-md text-on-surface-variant">
+                Please provide details about the hazard you observed to help our response teams react quickly.
+            </p>
+<!-- GPS Location Widget -->
+<section class="bg-surface rounded-lg p-md border border-outline-variant/50 shadow-sm flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<h2 class="text-label-md font-label-md text-on-surface uppercase tracking-wider flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                        Location
+                    </h2>
+<span class="text-label-md font-label-md text-primary bg-primary/10 px-2 py-1 rounded-full">Auto-Captured</span>
+</div>
+<div class="h-32 w-full rounded-md overflow-hidden bg-surface-container-high relative flex items-center justify-center mt-sm">
+<!-- Fake Map Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-60" data-alt="A stylized, dark-mode satellite map view of a rugged, mountainous terrain at night. The map uses deep blues, slate grays, and blacks, reflecting a modern command center UI aesthetic. A subtle, glowing topographical grid overlays the landscape. The overall mood is tense but precise, typical of high-stakes monitoring systems." data-location="Mountain Pass" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<!-- Map Pin -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-4 h-4 bg-error rounded-full animate-pulse shadow-[0_0_10px_theme('colors.error')]"></div>
+<div class="w-0.5 h-6 bg-error/80 -mt-1"></div>
+<div class="text-xs font-mono-data bg-surface-container-highest/80 px-2 py-1 rounded mt-1 border border-outline-variant backdrop-blur-sm">
+                            LAT 45.9221 | LNG -121.8492
+                        </div>
+</div>
+</div>
+</section>
+<!-- Media Upload -->
+<section class="flex flex-col gap-sm">
+<h2 class="text-label-md font-label-md text-on-surface uppercase tracking-wider flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">photo_camera</span>
+                    Visual Evidence
+                </h2>
+<button class="w-full h-32 border-2 border-dashed border-outline-variant hover:border-primary bg-surface hover:bg-primary/5 transition-colors rounded-lg flex flex-col items-center justify-center gap-sm text-on-surface-variant group" type="button">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary transition-colors">cloud_upload</span>
+<span class="text-body-md font-body-md group-hover:text-primary transition-colors font-semibold">Upload Photo/Video</span>
+</button>
+</section>
+<!-- Description -->
+<section class="flex flex-col gap-sm">
+<label class="text-label-md font-label-md text-on-surface uppercase tracking-wider flex items-center gap-xs" for="description">
+<span class="material-symbols-outlined text-[16px] text-primary">description</span>
+                    Situation Description
+                </label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface border-transparent rounded-lg p-md focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/50 transition-all text-body-md font-body-md resize-none shadow-sm" id="description" placeholder="Describe the situation..." rows="4"></textarea>
+</section>
+</main>
+<!-- Footer / Submit Action -->
+<footer class="p-md bg-surface-container-high border-t border-outline-variant shrink-0 z-10" id="form-footer">
+<button class="w-full py-lg bg-error hover:bg-error-container text-on-error font-bold rounded-lg shadow-lg shadow-error/20 flex items-center justify-center gap-sm transition-all active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-error focus:ring-offset-2 focus:ring-offset-surface-container-high text-title-lg font-title-lg" onclick="submitReport()">
+<span class="material-symbols-outlined">send</span>
+                Submit Report
+            </button>
+</footer>
+<!-- Success State Overlay (Hidden by default) -->
+<div class="absolute inset-0 bg-surface-container-lowest z-50 hidden flex-col items-center justify-center p-lg" id="success-overlay">
+<div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mb-lg relative">
+<div class="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin" id="spinner"></div>
+<span class="material-symbols-outlined text-5xl text-primary hidden" data-weight="fill" id="checkmark" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-primary mb-sm text-center" id="success-title">Processing...</h2>
+<p class="text-body-md font-body-md text-on-surface-variant text-center max-w-xs" id="success-desc">
+                Establishing secure connection to command center...
+            </p>
+<button class="mt-xl px-lg py-md border border-outline hover:bg-surface-variant/20 rounded-lg text-body-md font-body-md transition-colors hidden" id="return-btn" onclick="resetForm()">
+                Return to Dashboard
+            </button>
+</div>
+</div>
+<script>
+        function submitReport() {
+            const overlay = document.getElementById('success-overlay');
+            const spinner = document.getElementById('spinner');
+            const checkmark = document.getElementById('checkmark');
+            const title = document.getElementById('success-title');
+            const desc = document.getElementById('success-desc');
+            const returnBtn = document.getElementById('return-btn');
+            
+            // Show overlay
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            
+            // Reset state
+            spinner.classList.remove('hidden');
+            checkmark.classList.add('hidden');
+            title.textContent = "Processing...";
+            desc.textContent = "Establishing secure connection to command center...";
+            returnBtn.classList.add('hidden');
+
+            // Simulate network request
+            setTimeout(() => {
+                spinner.classList.add('hidden');
+                checkmark.classList.remove('hidden');
+                
+                // Add pop animation to checkmark
+                checkmark.style.animation = "slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards";
+                
+                title.textContent = "Report Submitted";
+                title.classList.add('text-primary');
+                
+                desc.textContent = "Thank you. Your hazard report has been securely transmitted to the response team.";
+                
+                returnBtn.classList.remove('hidden');
+                returnBtn.classList.add('slide-up');
+            }, 1500);
+        }
+
+        function resetForm() {
+            const overlay = document.getElementById('success-overlay');
+            const description = document.getElementById('description');
+            
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+            description.value = '';
+        }
+    </script>
+</body></html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zone Detail: Village A - Phek District</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Courier+Prime&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#690005",
+                      "on-secondary": "#472a00",
+                      "error": "#ffb4ab",
+                      "surface-variant": "#32353c",
+                      "on-tertiary-container": "#79000e",
+                      "on-primary-fixed-variant": "#005236",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#363940",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "error-container": "#93000a",
+                      "on-surface-variant": "#bbcabf",
+                      "surface-container-highest": "#32353c",
+                      "primary-fixed": "#6ffbbe",
+                      "background": "#10131a",
+                      "surface-container-low": "#191c22",
+                      "tertiary-fixed": "#ffdad7",
+                      "inverse-surface": "#e1e2eb",
+                      "primary-fixed-dim": "#4edea3",
+                      "secondary-container": "#ee9800",
+                      "secondary": "#ffb95f",
+                      "surface-container": "#1d2026",
+                      "on-tertiary-fixed": "#410004",
+                      "on-tertiary": "#68000a",
+                      "outline": "#86948a",
+                      "tertiary": "#ffb3ad",
+                      "on-tertiary-fixed-variant": "#930013",
+                      "surface-container-high": "#272a31",
+                      "on-background": "#e1e2eb",
+                      "primary": "#4edea3",
+                      "outline-variant": "#3c4a42",
+                      "tertiary-container": "#ff7a73",
+                      "on-primary": "#003824",
+                      "tertiary-fixed-dim": "#ffb3ad",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "surface": "#10131a",
+                      "inverse-on-surface": "#2e3037",
+                      "on-secondary-container": "#5b3800",
+                      "on-primary-container": "#00422b",
+                      "on-primary-fixed": "#002113",
+                      "on-secondary-fixed": "#2a1700",
+                      "on-surface": "#e1e2eb",
+                      "inverse-primary": "#006c49",
+                      "surface-container-lowest": "#0b0e14",
+                      "surface-tint": "#4edea3",
+                      "surface-dim": "#10131a",
+                      "primary-container": "#10b981",
+                      "secondary-fixed": "#ffddb8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "margin": "24px",
+                      "sm": "8px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "mono-data": [
+                              "Courier Prime"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .shadow-glow { box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .glass-panel {
+            background: linear-gradient(145deg, rgba(29,32,38,0.8) 0%, rgba(21,25,33,0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.1);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-background border-b border-outline-variant shadow-sm flex justify-between items-center w-full px-lg h-16 fixed top-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-title-lg" data-icon="menu">menu</span>
+<span class="text-title-lg font-title-lg font-bold text-primary">NER Landslide Early Warning System</span>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant font-medium">
+<div class="flex items-center gap-sm bg-surface-container-high rounded-full px-md py-sm">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48 text-on-surface" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="hover:bg-surface-variant/10 transition-colors p-sm rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-surface-variant/10 transition-colors p-sm rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="settings">settings</span>
+</button>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="Administrator Profile Image, professional portrait of an adult in a dark setting, subtle blue and green lighting, 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCy3_JctBEk5iGI5FTY-a5N-mcznTTy21OnXFVUIteaWsj9QQljz_OepXmZ29u6gFxn1yuTiUP8iRZ_e207f9mHJFsTYr-sU2GkvXLG7raP1xc_2wAueX8oKf87mqpFYxGHB7FuqJyHqV9mNTimsGbaYgZl33UnQmpEkVn69YDG9vDs-LavtYxR2WAguyf3QdqhueFY0NCjUiurqWiE-4U4f9Vc8AJbLpZMghi4cXqUU1lwRNMgEcxxw"/>
+</div>
+</nav>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden md:flex flex-col bg-surface-container-low border-r border-outline-variant fixed left-0 top-16 h-[calc(100vh-64px)] w-[280px] py-md px-sm z-40">
+<div class="mb-lg px-md">
+<div class="flex items-center gap-sm mb-sm">
+<img alt="NER LEWS Logo" class="w-10 h-10 rounded" data-alt="NER LEWS Logo, abstract geometric shape representing a mountain and waves, minimalist design, dark background, primary green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7pxO0QcgPp6EfOVDNj0f0g6jRi2YECemaFxJ2WKM17uZumAC9o5phCs4YEbXu8v_sWMkR24Js4knJAT1RAieFEoeQooyJUjVf1JNj5_fildRMfn5CWLOHmqcj5nLx3b6vYYrCEgskm5vxuuGWQWC0tgVZIP4PJwcOOytB6j8PXUR3M3IG_Ap1U4UAkUENkNiIwbV_cqynETyMUpSPAhuDqRlk2pEq8l-8DEGcsRSyy7YYzUVQgoq5Tw"/>
+<div>
+<h2 class="text-title-lg font-title-lg font-black text-primary leading-tight">Control Center</h2>
+<p class="text-label-md font-label-md text-on-surface-variant">Active Monitoring</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-sm">
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold scale-95 duration-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="text-label-md font-label-md">Detail</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-label-md font-label-md">Alerts</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-md font-label-md">Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-lg border-t border-outline-variant space-y-sm">
+<button class="w-full bg-primary-container text-on-primary-container py-sm rounded-lg font-label-md text-label-md mb-md hover:opacity-90 transition-opacity">Generate Report</button>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-label-md font-label-md">Help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[280px] p-margin pb-24 md:pb-margin overflow-y-auto">
+<!-- Header section -->
+<header class="mb-lg">
+<div class="flex items-center text-label-md font-label-md text-on-surface-variant mb-sm">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined mx-xs text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface">Village A - Phek District</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="text-display-lg font-display-lg text-on-surface mb-xs">Village A</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Zone Detail &amp; Risk Analysis</p>
+</div>
+<div class="bg-error/15 text-error px-md py-sm rounded-lg border border-error/30 flex items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-bold tracking-wider">HIGH RISK STATUS</span>
+</div>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-lg">
+<!-- Risk Trend Line Chart (Main) -->
+<div class="xl:col-span-8 glass-panel rounded-xl p-md shadow-glow relative overflow-hidden flex flex-col min-h-[400px]">
+<div class="flex justify-between items-center mb-md border-b border-outline-variant/30 pb-sm">
+<h3 class="text-title-lg font-title-lg text-on-surface">7-Day Risk Trend</h3>
+<span class="text-label-md font-label-md text-on-surface-variant px-sm py-xs bg-surface-container rounded">Last Updated: Just Now</span>
+</div>
+<div class="flex-1 relative w-full h-full">
+<!-- Simulated Chart Grid -->
+<div class="absolute inset-0 grid grid-rows-4 grid-cols-7 border-l border-b border-outline-variant/20 opacity-50 pointer-events-none">
+<div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div>
+<div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div>
+<div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div>
+<div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div><div class="border-t border-r border-outline-variant/20"></div>
+</div>
+<!-- Simulated SVG Line -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<!-- Safe Zone -->
+<rect class="text-primary opacity-[0.03]" fill="currentColor" height="30" width="100" x="0" y="70"></rect>
+<!-- Warning Zone -->
+<rect class="text-secondary opacity-[0.03]" fill="currentColor" height="40" width="100" x="0" y="30"></rect>
+<!-- Danger Zone -->
+<rect class="text-error opacity-[0.03]" fill="currentColor" height="30" width="100" x="0" y="0"></rect>
+<!-- Trend Line -->
+<path class="text-error" d="M 0 80 Q 15 75, 30 60 T 60 40 T 80 15 T 100 10" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<!-- Data Points -->
+<circle class="text-error" cx="0" cy="80" fill="currentColor" r="1.5"></circle>
+<circle class="text-error" cx="30" cy="60" fill="currentColor" r="1.5"></circle>
+<circle class="text-error" cx="60" cy="40" fill="currentColor" r="1.5"></circle>
+<circle class="text-error" cx="80" cy="15" fill="currentColor" r="1.5"></circle>
+<circle class="text-error" cx="100" cy="10" fill="currentColor" r="1.5"></circle>
+</svg>
+<!-- Axis Labels -->
+<div class="absolute -left-8 top-0 bottom-0 flex flex-col justify-between text-[10px] text-on-surface-variant font-mono-data py-2">
+<span>100</span>
+<span>75</span>
+<span>50</span>
+<span>25</span>
+<span>0</span>
+</div>
+</div>
+</div>
+<!-- 4 Metric Gauges (Right Column on Desktop) -->
+<div class="xl:col-span-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-md">
+<!-- Rainfall -->
+<div class="glass-panel rounded-lg p-md shadow-glow border-l-2 border-l-error">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="rainy">rainy</span> Rainfall
+                            </span>
+<span class="text-error font-bold text-sm">CRITICAL</span>
+</div>
+<div class="text-headline-md font-headline-md font-mono-data">145<span class="text-body-md text-on-surface-variant ml-xs">mm/24h</span></div>
+<div class="mt-sm bg-surface-container-highest rounded-full h-1 w-full overflow-hidden">
+<div class="bg-error h-full w-[90%]"></div>
+</div>
+</div>
+<!-- Soil Saturation -->
+<div class="glass-panel rounded-lg p-md shadow-glow border-l-2 border-l-secondary">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="water_drop">water_drop</span> Soil Saturation
+                            </span>
+<span class="text-secondary font-bold text-sm">ELEVATED</span>
+</div>
+<div class="text-headline-md font-headline-md font-mono-data">78<span class="text-body-md text-on-surface-variant ml-xs">%</span></div>
+<div class="mt-sm bg-surface-container-highest rounded-full h-1 w-full overflow-hidden">
+<div class="bg-secondary h-full w-[78%]"></div>
+</div>
+</div>
+<!-- Vibration -->
+<div class="glass-panel rounded-lg p-md shadow-glow border-l-2 border-l-primary">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="vibration">vibration</span> Micro-seismic
+                            </span>
+<span class="text-primary font-bold text-sm">NOMINAL</span>
+</div>
+<div class="text-headline-md font-headline-md font-mono-data">0.2<span class="text-body-md text-on-surface-variant ml-xs">mm/s</span></div>
+<div class="mt-sm bg-surface-container-highest rounded-full h-1 w-full overflow-hidden">
+<div class="bg-primary h-full w-[15%]"></div>
+</div>
+</div>
+<!-- Temperature -->
+<div class="glass-panel rounded-lg p-md shadow-glow border-l-2 border-l-primary">
+<div class="flex justify-between items-start mb-sm">
+<span class="text-label-md font-label-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="device_thermostat">device_thermostat</span> Temperature
+                            </span>
+<span class="text-primary font-bold text-sm">NOMINAL</span>
+</div>
+<div class="text-headline-md font-headline-md font-mono-data">24.5<span class="text-body-md text-on-surface-variant ml-xs">°C</span></div>
+<div class="mt-sm bg-surface-container-highest rounded-full h-1 w-full overflow-hidden">
+<div class="bg-primary h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Panel: Contributing Factors -->
+<div class="xl:col-span-12 glass-panel rounded-xl p-md shadow-glow mt-sm">
+<h3 class="text-title-lg font-title-lg text-on-surface mb-md border-b border-outline-variant/30 pb-sm">Risk Contributing Factors</h3>
+<div class="space-y-md">
+<!-- Factor 1 -->
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="text-label-md font-label-md text-on-surface">Heavy Rainfall Forecast</span>
+<span class="text-label-md font-mono-data text-error">60% Contribution</span>
+</div>
+<div class="bg-surface-container-highest rounded-full h-2 w-full overflow-hidden">
+<div class="bg-error h-full w-[60%] shadow-[0_0_10px_rgba(255,180,171,0.5)]"></div>
+</div>
+</div>
+<!-- Factor 2 -->
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="text-label-md font-label-md text-on-surface">Slope Angle Profile</span>
+<span class="text-label-md font-mono-data text-secondary">20% Contribution</span>
+</div>
+<div class="bg-surface-container-highest rounded-full h-2 w-full overflow-hidden">
+<div class="bg-secondary h-full w-[20%]"></div>
+</div>
+</div>
+<!-- Factor 3 -->
+<div>
+<div class="flex justify-between items-end mb-xs">
+<span class="text-label-md font-label-md text-on-surface">Historical Soil Saturation</span>
+<span class="text-label-md font-mono-data text-secondary">20% Contribution</span>
+</div>
+<div class="bg-surface-container-highest rounded-full h-2 w-full overflow-hidden">
+<div class="bg-secondary h-full w-[20%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-outline-variant/30 flex justify-end gap-md">
+<button class="px-md py-sm border border-outline-variant text-on-surface rounded-lg hover:bg-surface-variant/20 transition-colors">Acknowledge</button>
+<button class="px-md py-sm bg-error text-on-error rounded-lg font-bold hover:opacity-90 transition-opacity">Initiate Evacuation Protocol</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe bg-surface-container border-t border-outline-variant shadow-[0px_-4px_20px_rgba(0,0,0,0.5)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-xs">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-xs">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 p-sm rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="text-label-md-mobile font-label-md-mobile mt-xs">Reports</span>
+</a>
+</nav>
+</body></html>

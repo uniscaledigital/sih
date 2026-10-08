@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help &amp; Support - NER LEWS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Courier+Prime:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#ffb95f",
+                        "tertiary-container": "#ff7a73",
+                        "on-tertiary": "#68000a",
+                        "inverse-primary": "#006c49",
+                        "on-tertiary-container": "#79000e",
+                        "error-container": "#93000a",
+                        "surface-dim": "#10131a",
+                        "surface-container-lowest": "#0b0e14",
+                        "surface-container-high": "#272a31",
+                        "inverse-surface": "#e1e2eb",
+                        "on-primary-fixed": "#002113",
+                        "inverse-on-surface": "#2e3037",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-primary-container": "#00422b",
+                        "primary-fixed-dim": "#4edea3",
+                        "surface-bright": "#363940",
+                        "on-background": "#e1e2eb",
+                        "surface-container": "#1d2026",
+                        "on-primary": "#003824",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "primary-container": "#10b981",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e1e2eb",
+                        "surface-tint": "#4edea3",
+                        "secondary-container": "#ee9800",
+                        "primary": "#4edea3",
+                        "on-secondary": "#472a00",
+                        "primary-fixed": "#6ffbbe",
+                        "on-secondary-fixed": "#2a1700",
+                        "outline": "#86948a",
+                        "surface-container-highest": "#32353c",
+                        "outline-variant": "#3c4a42",
+                        "secondary-fixed": "#ffddb8",
+                        "tertiary-fixed": "#ffdad7",
+                        "background": "#10131a",
+                        "tertiary": "#ffb3ad",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#5b3800",
+                        "surface-variant": "#32353c",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#410004",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-surface-variant": "#bbcabf",
+                        "surface-container-low": "#191c22",
+                        "surface": "#10131a",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "mono-data": ["Courier Prime"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0b0e14; color: #e1e2eb; }
+        .glass-card { background: rgba(21, 25, 33, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(226, 232, 240, 0.1); box-shadow: 0px 4px 20px rgba(0,0,0,0.5); }
+        .hover-card { transition: all 0.2s ease-in-out; }
+        .hover-card:hover { border-color: rgba(226, 232, 240, 0.2); transform: translateY(-2px); }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b0e14; }
+        ::-webkit-scrollbar-thumb { background: #32353c; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4edea3; }
+    </style>
+</head>
+<body class="antialiased min-h-screen font-body-md text-body-md overflow-x-hidden flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-[calc(100vh-64px)] w-[280px] bg-surface-container-low border-r border-outline-variant fixed left-0 top-16 py-md px-sm z-40">
+<div class="mb-lg px-md">
+<h1 class="text-headline-md font-headline-md font-black text-primary">NER Landslide Early Warning System</h1>
+<p class="text-label-md font-label-md text-on-surface-variant mt-sm">Control Center</p>
+<p class="text-label-md font-label-md text-on-surface-variant">Active Monitoring</p>
+</div>
+<div class="flex-1 space-y-sm">
+<a class="flex items-center space-x-md text-on-surface-variant hover:text-on-surface p-md hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center space-x-md text-on-surface-variant hover:text-on-surface p-md hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="text-label-md font-label-md">Detail</span>
+</a>
+<a class="flex items-center space-x-md text-on-surface-variant hover:text-on-surface p-md hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-label-md font-label-md">Alerts</span>
+</a>
+<a class="flex items-center space-x-md text-on-surface-variant hover:text-on-surface p-md hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-md font-label-md">Analytics</span>
+</a>
+</div>
+<div class="mt-auto space-y-sm pt-md border-t border-outline-variant/30">
+<a class="flex items-center space-x-md text-on-surface-variant hover:text-on-surface p-md hover:bg-surface-container-highest transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center space-x-md bg-secondary-container text-on-secondary-container rounded-lg font-bold p-md hover:bg-surface-container-highest transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-label-md font-label-md">Help</span>
+</a>
+</div>
+<button class="mt-lg w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-sm rounded-lg hover:opacity-90 transition-opacity">
+            Generate Report
+        </button>
+</nav>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-lg h-16 fixed top-0 z-50 bg-background border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-md">
+<div class="md:hidden text-title-lg font-title-lg font-bold text-primary">NER LEWS</div>
+<!-- Search bar on left as per JSON -->
+<div class="hidden md:flex relative ml-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-body-md font-body-md text-on-surface w-[300px] transition-colors" placeholder="Search resources..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-variant/10">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-variant/10">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="A small, professional headshot of an administrator in a high-tech command center environment. Dark mode aesthetic with subtle cool lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeEns_vMsSXiImo1rSlW80AbobMQwpTWHjfHeel_z9Z1HZlDozySsfqjxPxD06OYE02c2tUhhuzwDCmuSpSfle_j1JAS_GjhRXT9fr74j5LhFg-AjURBjcioo6lCXhmnvgIal8bG23mpl6or-rGznKqoS5JXXQF_vcb_NuY31pGQZporma0sLKI5EP7EQCwZDTuraDOliXtu-WRbWriKBdDKCudon-0qIasvyrnloRlIaRjumeqgB-vQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 md:ml-[280px] p-margin pb-24 md:pb-margin relative overflow-y-auto">
+<!-- Header -->
+<div class="mb-lg flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="text-display-lg font-display-lg text-primary">Help &amp; Support</h2>
+<p class="text-title-lg font-title-lg text-on-surface-variant mt-xs">NER Landslide Early Warning System Knowledge Base</p>
+</div>
+<!-- Mobile Search -->
+<div class="md:hidden relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg focus:outline-none focus:border-primary text-body-md font-body-md text-on-surface transition-colors" placeholder="Search resources..." type="text"/>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg auto-rows-min">
+<!-- Quick Action: Emergency Contact (Spans full on mobile, 4 cols on desktop) -->
+<div class="glass-card rounded-xl p-md md:col-span-4 flex flex-col justify-between hover-card border-error/20 bg-error-container/10">
+<div class="flex items-start justify-between mb-sm">
+<div class="p-sm bg-error-container rounded-lg text-on-error-container">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+</div>
+<span class="px-2 py-1 bg-error-container/20 text-error rounded text-label-md font-label-md">Critical Response</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-error mb-xs">Emergency Support</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">Direct line for critical system failures or immediate landslide threats.</p>
+</div>
+<div class="space-y-sm">
+<button class="w-full py-2 bg-error text-on-error font-label-md text-label-md rounded-lg flex justify-center items-center gap-2 hover:bg-error/90 transition-colors">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                        1-800-NER-EMRG
+                    </button>
+<button class="w-full py-2 border border-error/50 text-error font-label-md text-label-md rounded-lg flex justify-center items-center gap-2 hover:bg-error/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="radio">radio</span>
+                        Initiate Radio Link
+                    </button>
+</div>
+</div>
+<!-- FAQ Categories (Spans 8 cols) -->
+<div class="glass-card rounded-xl p-md md:col-span-8 flex flex-col hover-card">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary" data-icon="library_books">library_books</span>
+<h3 class="text-title-lg font-title-lg text-on-surface">Knowledge Base Categories</h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md flex-1">
+<a class="p-md rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-primary/50 transition-colors flex flex-col items-center text-center group" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-secondary" data-icon="sensors">sensors</span>
+</div>
+<h4 class="text-body-lg font-body-lg text-on-surface font-semibold mb-xs">Sensor Troubleshooting</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Diagnostics and calibration for remote sensing units.</p>
+</a>
+<a class="p-md rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-primary/50 transition-colors flex flex-col items-center text-center group" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" data-icon="ssid_chart">ssid_chart</span>
+</div>
+<h4 class="text-body-lg font-body-lg text-on-surface font-semibold mb-xs">Interpreting Risk Levels</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Guide to threshold metrics and alert classifications.</p>
+</a>
+<a class="p-md rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-primary/50 transition-colors flex flex-col items-center text-center group" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center mb-sm group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="assignment_late">assignment_late</span>
+</div>
+<h4 class="text-body-lg font-body-lg text-on-surface font-semibold mb-xs">Reporting Procedures</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Standard operating procedures for logging anomalies.</p>
+</a>
+</div>
+</div>
+<!-- Technical Support Contact (Spans 6 cols) -->
+<div class="glass-card rounded-xl p-md md:col-span-6 flex flex-col hover-card">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent">support_agent</span>
+<h3 class="text-title-lg font-title-lg text-on-surface">Technical Support</h3>
+</div>
+<div class="flex flex-col gap-sm">
+<p class="text-body-md font-body-md text-on-surface-variant mb-sm">For non-emergency technical assistance, software bugs, or account management.</p>
+<div class="flex items-center justify-between p-sm rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="mail">mail</span>
+<span class="text-body-md font-body-md text-on-surface">support@ner-lews.gov</span>
+</div>
+<button class="text-primary hover:text-primary-fixed transition-colors font-label-md text-label-md">Copy</button>
+</div>
+<div class="flex items-center justify-between p-sm rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chat">chat</span>
+<span class="text-body-md font-body-md text-on-surface">Live Chat</span>
+</div>
+<span class="px-2 py-0.5 bg-primary-container/20 text-primary rounded text-label-md font-label-md">Online</span>
+</div>
+<button class="mt-sm w-full py-2 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                        Open Support Ticket
+                    </button>
+</div>
+</div>
+<!-- Quick Links (Spans 6 cols) -->
+<div class="glass-card rounded-xl p-md md:col-span-6 flex flex-col hover-card">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-primary" data-icon="link">link</span>
+<h3 class="text-title-lg font-title-lg text-on-surface">Quick Resources</h3>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="flex items-center justify-between p-sm rounded hover:bg-surface-container-low border border-transparent hover:border-outline-variant/30 transition-all group" href="#">
+<div class="flex items-center gap-3">
+<div class="p-1.5 rounded bg-surface-variant group-hover:bg-primary-container/20 text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md text-on-surface font-semibold">System Manual (v2.4)</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">Comprehensive operator guide</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="download">download</span>
+</a>
+<a class="flex items-center justify-between p-sm rounded hover:bg-surface-container-low border border-transparent hover:border-outline-variant/30 transition-all group" href="#">
+<div class="flex items-center gap-3">
+<div class="p-1.5 rounded bg-surface-variant group-hover:bg-primary-container/20 text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="play_circle">play_circle</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md text-on-surface font-semibold">Video Tutorials</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">Visual walkthroughs of key features</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-sm rounded hover:bg-surface-container-low border border-transparent hover:border-outline-variant/30 transition-all group" href="#">
+<div class="flex items-center gap-3">
+<div class="p-1.5 rounded bg-surface-variant group-hover:bg-primary-container/20 text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="api">api</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md text-on-surface font-semibold">API Documentation</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">For developers and integrators</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) - Excluded navigation shell logic implies this shouldn't be here, 
+         but the task instructions mandate rendering components from the JSON. Following the "Destination Rule", 
+         Help is a destination within the app ecosystem. However, strictly adhering to the "Semantic Shell Mandate", 
+         if we map Help to a destination, we include it. Let's include it for mobile completeness as it is in the JSON. -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe bg-surface-container border-t border-outline-variant shadow-[0px_-4px_20px_rgba(0,0,0,0.5)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded p-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded p-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[10px] font-label-md mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded p-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+<span class="text-[10px] font-label-md mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/20 rounded p-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="text-[10px] font-label-md mt-1">Reports</span>
+</a>
+</nav>
+</body></html>
